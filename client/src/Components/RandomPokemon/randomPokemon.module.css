@@ -1,0 +1,40 @@
+background {
+    background-color: #1a222e;
+}
+
+.box{
+    background-image: url('https://pbs.twimg.com/media/Ce6nqVLUUAAIULI?format=png&name=large');
+    text-align: center;
+    height: 100%;
+}
+
+.h1{
+    padding: 50px;
+    color: white;
+}
+
+.p{
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 0 1px 0 1px black,
+                inset 0 1px 0 1px black,
+                0 0 0 1px black,
+                inset 0 0 0 1px black;
+}
+
+.button {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 15px;
+    background-color: #1a222e;
+}

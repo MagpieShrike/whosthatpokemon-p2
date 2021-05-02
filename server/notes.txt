@@ -1,0 +1,35 @@
+
+
+Database Perspective:
+    - Fields: id, name, nickname
+    - Document
+    - Collection
+    - Methods:
+        - Connect
+        - Close
+        - createOne()   ->  insertOne()
+        - readOne()     ->  findOne()
+        - updateOne()   ->  updateOne()
+        - deleteOne()   ->  deleteOne()
+
+Server Perspective:
+    - Fields: id, name, nickname
+    - Document: ( Request Parameter )
+    - CRUD
+        - PUT       ( create )  :   App.put()
+        - GET       ( read )    :   App.get()
+        - PATCH     ( update )  :   App.patch()
+        - DELETE    ( delete )  :   App.delete()
+    Routes:
+        - PUT:      "/pokemon/:sku"   ( Request Body )
+        - Get:      "/pokemon/:sku"
+        - Patch:    "/pokemon/:sku"   ( Request Body )
+        - Delete:   "/pokemon/:sku"
+
+Client Perspective:
+    - CRUD
+        - PUT       ( create )  :   Axios.put()
+        - GET       ( read )    :   Axios.get()
+        - PATCH     ( update )  :   Axios.patch()
+        - DELETE    ( delete )  :   Axios.delete()   
+

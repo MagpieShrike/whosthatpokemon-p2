@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from '../Modal';
 import iCSS from './identify.module.css';
 
 class Identify extends React.Component {
@@ -35,7 +36,7 @@ class Identify extends React.Component {
                     : (
                         (this.state.correct === true) 
                         ? ( <>
-                                <p className={iCSS.p}>Correct!</p>
+                                <Modal {...this.props}/>
                                
                             </> )
                         : ( <p className={iCSS.p}>Try again.</p> )

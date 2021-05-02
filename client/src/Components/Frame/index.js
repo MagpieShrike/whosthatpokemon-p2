@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import Collection from '../Collection';
-import Identify from '../Identify';
+//import Identify from '../Identify';
+import RandomPokemon from '../RandomPokemon';
 import fCSS from './frame.module.css';
 
 function Frame() {
@@ -24,7 +25,7 @@ function Frame() {
                 
                 
                 <div className={fCSS.screen}>
-                {screen == "search" ? <Identify /> : <Collection />}
+                {screen == "search" ? <RandomPokemon /> : <Collection />}
                 </div>
    
             </div>

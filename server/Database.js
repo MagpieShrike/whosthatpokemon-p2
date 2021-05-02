@@ -15,21 +15,21 @@ class Database {
         this.collection = this.database.collection( collection );
     };
 
-    async createOne( ISBN, title, author, description ) {
+    async createOne( id, name, nickname ) {
         if ( this.collection != null ) {
-            return await this.collection.insertOne( { "ISBN": ISBN, "title": title, "author": author, "description": description } );
+            return await this.collection.insertOne( { "id": id, "name": name, "nickname": nickname } );
         } else {
             return "could not connect to database";
         };
     };
 
-    async readOne( ISBN ) {
+    async readOne( name ) {
         if ( this.collection != null ) {
             const result = await this.collection.findOne( { "ISBN": ISBN } );
             if ( result != null ) {
                 return result;
             } else {
-                return { "book": "not found" };
+                return { "pokemon": "not found" };
             }
         } else {
             return "could not connect to database";
@@ -41,9 +41,9 @@ class Database {
             const result = await this.collection.find( query ).toArray()
             .then((cursorArray) => {
                 if ( cursorArray.length != 0 ) {
-                    return { books: cursorArray };
+                    return { pokemon: cursorArray };
                 } else {
-                    return { books: "none" };
+                    return { pokemon: "none" };
                 }
             });
             return result;
@@ -52,10 +52,20 @@ class Database {
         }
     }
 
-    async deleteOne( ISBN ) {
+    async updateOne( name, nickname ) {
+        if ( this.collection != null ) {
+            const result = await this.collection.updateOne({"name": name}, {$set: {"nickname": nickname}});
+            return { "nickname": nickname };
+
+        } else {
+            return "could not connect to database";
+        };
+    };
+
+    async deleteOne( id ) {
         if (this.collection != null) {
-            const result = await this.collection.deleteOne( { "ISBN": ISBN } );
-            return { "books": result.deletedCount };
+            const result = await this.collection.deleteOne( { "id": id } );
+            return { "pokemon": result.deletedCount };
         } else {
             return "could not connect to database";
         };
